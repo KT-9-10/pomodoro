@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://cmc5f3swboba0"]
+
+[ext_resource type="Script" uid="uid://b7biyt1abxqck" path="res://pomodoro.gd" id="1_jmfn1"]
+[ext_resource type="AudioStream" uid="uid://bvewyyc4tnc2m" path="res://bgm.mp3" id="1_uwogl"]
+[ext_resource type="FontFile" uid="uid://bvlv570fhtkub" path="res://x10y12pxDonguriDuel.ttf" id="1_v20h3"]
+[ext_resource type="AudioStream" uid="uid://dweivdqm726um" path="res://sfx_lowhealth_alarmloop2.wav" id="2_jmfn1"]
+
+[node name="Pomodoro" type="Control" unique_id=433870592]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jmfn1")
+focus_color = Color(1, 0, 0, 1)
+short_break_color = Color(0, 1, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=398857886]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Timer" type="Timer" parent="." unique_id=601772648]
+one_shot = true
+
+[node name="ModeLabel" type="Label" parent="." unique_id=1413872105]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 10.0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("1_v20h3")
+theme_override_font_sizes/font_size = 32
+text = "MODE"
+
+[node name="TimeLabel" type="Label" parent="." unique_id=648486728]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.52
+anchor_top = 0.45
+anchor_right = 0.52
+anchor_bottom = 0.45
+offset_left = -144.0
+offset_top = -64.5
+offset_right = 144.0
+offset_bottom = 64.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_v20h3")
+theme_override_font_sizes/font_size = 128
+text = "00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CountLabel" type="Label" parent="." unique_id=652518185]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_right = -8.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("1_v20h3")
+theme_override_font_sizes/font_size = 32
+text = "Pomodoro: 0"
+horizontal_alignment = 2
+
+[node name="StateLabel" type="Label" parent="." unique_id=332644649]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_v20h3")
+theme_override_font_sizes/font_size = 32
+text = "STATE"
+
+[node name="AlarmSE" type="AudioStreamPlayer" parent="." unique_id=340475267]
+stream = ExtResource("2_jmfn1")
+
+[node name="BGM" type="AudioStreamPlayer" parent="." unique_id=2022756514]
+stream = ExtResource("1_uwogl")
+autoplay = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
