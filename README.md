@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # pomodoro
 =======
 # Simple Pomodoro Timer (Godot)
