@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# pomodoro
-=======
 # Simple Pomodoro Timer (Godot)
 
 ## Screenshot
@@ -45,4 +42,3 @@ https://opengameart.org/content/512-sound-effects-8-bit-style
 ## Notes
 
 This was a small project, but it was good practice for UI and state management in Godot.
->>>>>>> a56bedc23d62abcb00c1d8b6928f890f2cf56947
