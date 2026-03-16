@@ -30,6 +30,9 @@ https://kt-9-10.itch.io/simple-pomodoro-timer-godot
 
 ## Assets
 
+**Font**
+https://hicchicc.github.io/00ff/
+
 **BGM**
 https://fai-music.com/
 
