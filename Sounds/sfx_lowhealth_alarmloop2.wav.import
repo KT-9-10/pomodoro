@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dweivdqm726um"
-path="res://.godot/imported/sfx_lowhealth_alarmloop2.wav-489f98b4163e7db2100b688fa8703e40.sample"
+path="res://.godot/imported/sfx_lowhealth_alarmloop2.wav-cce2b1fc77c68c86f246700e9aaa15fc.sample"
 
 [deps]
 
-source_file="res://sfx_lowhealth_alarmloop2.wav"
-dest_files=["res://.godot/imported/sfx_lowhealth_alarmloop2.wav-489f98b4163e7db2100b688fa8703e40.sample"]
+source_file="res://Sounds/sfx_lowhealth_alarmloop2.wav"
+dest_files=["res://.godot/imported/sfx_lowhealth_alarmloop2.wav-cce2b1fc77c68c86f246700e9aaa15fc.sample"]
 
 [params]
 
