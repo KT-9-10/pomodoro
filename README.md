@@ -1,5 +1,8 @@
 # Simple Pomodoro Timer (Godot)
 
+## Screenshot
+![Screenshot](screenshot.png)
+
 A simple Pomodoro timer made with Godot, designed for streaming and focused work sessions.
 
 Focus time: **25 minutes**
