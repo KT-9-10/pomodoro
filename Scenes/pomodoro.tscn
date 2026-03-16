@@ -4,6 +4,94 @@
 [ext_resource type="AudioStream" uid="uid://bvewyyc4tnc2m" path="res://Sounds/bgm.mp3" id="1_uwogl"]
 [ext_resource type="FontFile" uid="uid://bvlv570fhtkub" path="res://Fonts/x10y12pxDonguriDuel.ttf" id="1_v20h3"]
 [ext_resource type="AudioStream" uid="uid://dweivdqm726um" path="res://Sounds/sfx_lowhealth_alarmloop2.wav" id="2_jmfn1"]
+[ext_resource type="Texture2D" uid="uid://vgtpidx8d51e" path="res://Sprites/tomat_idle-Sheet.png" id="5_52ils"]
+[ext_resource type="Texture2D" uid="uid://bwn8qkgkd1j3x" path="res://Sprites/tomat_jump-Sheet.png" id="6_s5ys1"]
+[ext_resource type="Texture2D" uid="uid://catviwpc0kp2g" path="res://Sprites/tomat_sleep-Sheet.png" id="7_acapq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ntc0"]
+atlas = ExtResource("5_52ils")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w25k3"]
+atlas = ExtResource("5_52ils")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tkcb0"]
+atlas = ExtResource("6_s5ys1")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nk75b"]
+atlas = ExtResource("6_s5ys1")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ybtfb"]
+atlas = ExtResource("6_s5ys1")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oe4k6"]
+atlas = ExtResource("6_s5ys1")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_njc7e"]
+atlas = ExtResource("7_acapq")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uvxmy"]
+atlas = ExtResource("7_acapq")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2p1w4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ntc0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w25k3")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tkcb0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nk75b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ybtfb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oe4k6")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_njc7e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uvxmy")
+}],
+"loop": true,
+"name": &"sleep",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_njc7e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uvxmy")
+}],
+"loop": true,
+"name": &"sleep_slow",
+"speed": 1.0
+}]
 
 [node name="Pomodoro" type="Control" unique_id=433870592]
 layout_mode = 3
@@ -42,9 +130,9 @@ text = "MODE"
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.52
-anchor_top = 0.45
-anchor_right = 0.52
-anchor_bottom = 0.45
+anchor_top = 0.41
+anchor_right = 0.53
+anchor_bottom = 0.41
 offset_left = -144.0
 offset_top = -64.5
 offset_right = 144.0
@@ -52,7 +140,7 @@ offset_bottom = 64.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_v20h3")
-theme_override_font_sizes/font_size = 128
+theme_override_font_sizes/font_size = 110
 text = "00:00"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -72,11 +160,11 @@ horizontal_alignment = 2
 [node name="StateLabel" type="Label" parent="." unique_id=332644649]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.5
+anchor_left = 0.43
 anchor_top = 1.0
-anchor_right = 0.5
+anchor_right = 0.43
 anchor_bottom = 1.0
-offset_bottom = -6.0
+offset_bottom = -8.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("1_v20h3")
@@ -89,5 +177,13 @@ stream = ExtResource("2_jmfn1")
 [node name="BGM" type="AudioStreamPlayer" parent="." unique_id=2022756514]
 stream = ExtResource("1_uwogl")
 autoplay = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=64391612]
+position = Vector2(224, 147)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_2p1w4")
+animation = &"sleep"
+autoplay = "idle"
+frame_progress = 0.7636078
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

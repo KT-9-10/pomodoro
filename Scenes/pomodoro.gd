@@ -54,7 +54,9 @@ func _process(_delta: float) -> void:
 	
 	# 時間ラベルの更新
 	update_time_label()
- 
+	# アニメーションの更新
+	update_animation()
+
 
 # モードをセットする
 func set_mode(mo: Mode) -> void:
@@ -131,3 +133,15 @@ func update_count_label() -> void:
 		pomodoro_count += 1
 		$CountLabel.text = "Pomodoro: " + str(pomodoro_count)
 		
+
+func update_animation() -> void:
+	if mode == Mode.FOCUS:
+		if state == State.RUNNING:
+			$AnimatedSprite2D.play("jump")
+		else:
+			$AnimatedSprite2D.play("idle")
+	else:
+		if state == State.RUNNING:
+			$AnimatedSprite2D.play("sleep")
+		else:
+			$AnimatedSprite2D.play("sleep_slow")
