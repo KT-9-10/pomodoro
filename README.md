@@ -1,5 +1,3 @@
-# pomodoro
-=======
 # Simple Pomodoro Timer (Godot)
 
 ## Screenshot
