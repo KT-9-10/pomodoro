@@ -11,17 +11,17 @@ Break time: **5 minutes**
 ## Features
 
 * **Start / Pause toggle**
-
-  * Space key
-  * Left click
+  * Space
+  * Left Click
 
 * **Reset + mode switch**
-
-  * R key
+  * R
 
 * **Mute toggle**
+  * M
 
-  * M key
+* **Quit**
+  * Esc
 
 ## Download
 
