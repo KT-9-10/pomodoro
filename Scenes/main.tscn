@@ -17,4 +17,5 @@ size_flags_vertical = 3
 layout_mode = 1
 
 [node name="SettingsMenu" parent="." unique_id=2036764200 instance=ExtResource("2_8gbba")]
+visible = false
 layout_mode = 1
