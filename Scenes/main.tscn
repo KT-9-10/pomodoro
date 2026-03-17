@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bafyk4vqowjrs"]
 
+[ext_resource type="Script" uid="uid://bycwoxlftwfgb" path="res://Scenes/main.gd" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://cmc5f3swboba0" path="res://Scenes/pomodoro.tscn" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://qqi424ofo60" path="res://Scenes/settings_menu.tscn" id="2_8gbba"]
 
@@ -12,6 +13,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+script = ExtResource("1_8gbba")
 
 [node name="Pomodoro" parent="." unique_id=433870592 instance=ExtResource("1_bo1nx")]
 layout_mode = 1
@@ -19,3 +21,5 @@ layout_mode = 1
 [node name="SettingsMenu" parent="." unique_id=2036764200 instance=ExtResource("2_8gbba")]
 visible = false
 layout_mode = 1
+
+[connection signal="closed" from="SettingsMenu" to="." method="_on_settings_menu_closed"]

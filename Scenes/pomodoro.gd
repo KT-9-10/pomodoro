@@ -3,9 +3,7 @@ extends Control
 enum Mode { FOCUS, SHORT_BREAK }
 enum State { READY, RUNNING, PAUSED }
 
-@export var focus_time := 25
 @export var focus_color: Color
-@export var short_break_time := 5
 @export var short_break_color: Color
 
 var mode: Mode = Mode.FOCUS
@@ -87,9 +85,9 @@ func set_state(st: State) -> void:
 func apply_mode_time() -> void:
 	match mode:
 		Mode.FOCUS:
-			set_wait_timer(focus_time)
+			set_wait_timer(Global.focus_time)
 		Mode.SHORT_BREAK:
-			set_wait_timer(short_break_time)
+			set_wait_timer(Global.short_break_time)
 
 
 # 分を秒に変換してタイマーにセットする
@@ -116,6 +114,10 @@ func get_time_string(time: float) -> String:
 func _on_timer_timeout() -> void:
 	update_count_label()
 	$AlarmSE.play()
+	await $AlarmSE.finished
+	await get_tree().create_timer(0.2).timeout
+	$AlarmSE.play()
+	await get_tree().create_timer(0.5).timeout
 	switch_mode()
 	set_state(State.READY)
 	apply_mode_time()
