@@ -1,7 +1,7 @@
 # Simple Pomodoro Timer (Godot)
 
 ## Screenshot
-![Screenshot](screenshot.gif)
+![Screenshot](screenshot.gif) ![Screenshot](screenshot_setting.gif)
 
 A simple Pomodoro timer made with Godot, designed for streaming and focused work sessions.
 
