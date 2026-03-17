@@ -51,7 +51,8 @@ func _process(_delta: float) -> void:
 	# アプリを終了する
 	if Input.is_action_just_pressed("Quit"):
 		get_tree().quit()
-	
+
+
 	# 時間ラベルの更新
 	update_time_label()
 	# アニメーションの更新

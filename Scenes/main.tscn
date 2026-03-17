@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bafyk4vqowjrs"]
+
+[ext_resource type="PackedScene" uid="uid://cmc5f3swboba0" path="res://Scenes/pomodoro.tscn" id="1_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://qqi424ofo60" path="res://Scenes/settings_menu.tscn" id="2_8gbba"]
+
+[node name="Main" type="Control" unique_id=1275824435]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Pomodoro" parent="." unique_id=433870592 instance=ExtResource("1_bo1nx")]
+layout_mode = 1
+
+[node name="SettingsMenu" parent="." unique_id=2036764200 instance=ExtResource("2_8gbba")]
+layout_mode = 1
